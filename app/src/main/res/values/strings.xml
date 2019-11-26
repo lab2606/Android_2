@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Android_2</string>
+    <string name="misDatos">Mis datos</string>
+    <string name="otroBoton">Otro Boton</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Email">Email</string>
+    <string name="Telefono">Telefono</string>
+    <string name="GuardarDatos">Guardar Datos</string>
+    <string name="vacio"></string>
+</resources>
