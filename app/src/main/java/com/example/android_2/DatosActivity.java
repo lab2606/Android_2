@@ -38,9 +38,9 @@ public class DatosActivity extends AppCompatActivity {
     public void guardarDatos(View view){
         if(view.getId() == R.id.btnGuardarDatos){
             SharedPreferences.Editor editor = infoDatos.edit();
-            editor.putString("nombre",txtNombre.getText().toString());
-            editor.putString("email",txtEmail.getText().toString());
-            editor.putString("telefono",txtTelefono.getText().toString());
+            editor.putString("Nombre",txtNombre.getText().toString());
+            editor.putString("Email",txtEmail.getText().toString());
+            editor.putString("Telefono",txtTelefono.getText().toString());
             editor.commit();
             Toast.makeText(this,"Se guardaron los datos",Toast.LENGTH_LONG).show();
         }

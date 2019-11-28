@@ -24,7 +24,7 @@
             android:ems="10"
             android:hint="@string/Nombre"
             android:inputType="textPersonName"
-            android:text="@string/vacio" />
+            android:autofillHints="@string/Nombre" />
 
         <TextView
             android:id="@+id/Email"
@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/Email"
-            android:inputType="textPersonName"
-            android:text="@string/vacio" />
+            android:inputType="textEmailAddress"
+            android:autofillHints="@string/Email" />
 
         <TextView
             android:id="@+id/Telefono"
@@ -53,13 +53,14 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/Telefono"
-            android:inputType="textPersonName"
-            android:text="@string/vacio" />
+            android:inputType="number"
+            android:autofillHints="@string/Telefono" />
 
         <Button
             android:id="@+id/btnGuardarDatos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="guardarDatos"
             android:text="@string/GuardarDatos" />
 
     </LinearLayout>
