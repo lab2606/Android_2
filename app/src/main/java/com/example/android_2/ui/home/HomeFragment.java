@@ -15,7 +15,13 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.android_2.R;
 import com.example.android_2.models.Empleado;
+import com.example.android_2.utils.Globals;
+import com.example.android_2.utils.ReporteService;
 import com.google.gson.Gson;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
@@ -23,6 +29,7 @@ public class HomeFragment extends Fragment {
 
     private Gson gson;
     private TextView txtRes;
+    private ReporteService service;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -59,7 +66,38 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        service = Globals.getApi().create(ReporteService.class);
+
+        Button btnLlamada = root.findViewById(R.id.btnUnico);
+        btnLlamada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getEpleado(5);
+            }
+        });
+
         return root;
+    }
+
+    private Call<Empleado> getEmpleadoCall;
+
+    private void getEpleado(int id){
+        getEmpleadoCall = service.getEmpleadoUnico(id);
+        getEmpleadoCall.enqueue(new Callback<Empleado>() {
+            @Override
+            public void onResponse(Call<Empleado> call, Response<Empleado> response) {
+                if(response.isSuccessful()){
+                    Empleado empResult = response.body();
+                    claseJson(empResult);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Empleado> call, Throwable t) {
+
+            }
+        });
+
     }
 
     private void claseJson(Empleado empleado) {

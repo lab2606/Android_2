@@ -38,5 +38,17 @@
             android:layout_height="wrap_content"
             android:text="TextView" />
 
+        <Button
+            android:id="@+id/btnUnico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Llamar WS" />
+
+        <Button
+            android:id="@+id/btnTodos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Llamar lista" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
