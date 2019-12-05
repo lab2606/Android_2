@@ -2,6 +2,8 @@ package com.example.android_2.utils;
 
 import com.example.android_2.models.CallResult;
 import com.example.android_2.models.Empleado;
+import com.example.android_2.models.LoginResult;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 
 import java.util.List;
 
@@ -27,4 +29,9 @@ public interface ReporteService {
                                     @Field("email")String email,
                                     @Field("telefono")String telefono,
                                     @Field("reporte")String reporte);
+
+    @FormUrlEncoded
+    @POST("login.php")
+    Call<LoginResult> login(@Field("username")String usuario,
+                            @Field("password")String password);
 }
